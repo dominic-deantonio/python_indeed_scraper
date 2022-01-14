@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+"""Contains the main scraping function"""
 
 def _safe_extract_text(obj):
     # Safely extracts text by checking HTML element for None
@@ -19,7 +20,7 @@ def _safe_extract_location(obj):
 
 
 def _extract_from_job_element(job_element):
-    # Extract the elements from the main job_element
+    # Extract the elements from the main job_element and return the result
     title_element = job_element.find("h2", class_="jobTitle")
     company_element = job_element.find("span", class_="companyName")
     company_location_element = job_element.find("div", class_="companyLocation")
